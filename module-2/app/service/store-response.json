@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "productId": "4e53920c-505a-4a90-a694-b9300791f0ae",
+      "name": "AWS DeepRacer",
+      "type": "Smart Hardware",
+      "price": 300,
+      "category1": "Machine Learning",
+      "category2": "Dispositivo",
+      "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/1.png",
+      "profileImageUri" : "https://curso-arquitectura-assets.s3.amazonaws.com/products/1.png"
+    },
+    {
+      "productId": "4e539202-505a-4a90-a694-b9300791f0ae",
+      "name": "AWS Certified Solutions Architect – Associate Guide",
+      "type": "Books",
+      "price": 80,
+      "category1": "Certificación",
+      "category2": "Literatura Técnica",
+      "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/2.png",
+      "profileImageUri" : "https://curso-arquitectura-assets.s3.amazonaws.com/products/2.png"
+    },
+    {
+      "productId": "4e539202-505a-4a90-a694-59300791f0ae",
+      "name": "Balón Americano",
+      "type": "Sports",
+      "price": 80,
+      "category1": "Fitness",
+      "category2": "Outdoors",
+      "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/3.png",
+      "profileImageUri" : "https://curso-arquitectura-assets.s3.amazonaws.com/products/3.png"
+    },
+    {
+      "productId": "4e539202-505a-4a90-a694-b9300791f0ae",
+      "name": "Learn Amazon SageMaker",
+      "type": "Books",
+      "price": 60,
+      "category1": "Certificación",
+      "category2": "Literatura Técnica",
+      "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/4.png",
+      "profileImageUri" : "https://curso-arquitectura-assets.s3.amazonaws.com/products/4.png"
+    }
+  ]
+}
