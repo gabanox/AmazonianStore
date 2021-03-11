@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Amazonian Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  </head>
+  <body ng-app="amazonianApp" style="background-color:#fff">
+    <style>
+      @media (max-width: 800px) {
+      	img {
+          max-width: 300px;
+      	}
+      }
+    </style>
+    <br>
+    <div style="text-align: center">
+      <img src="https://curso-arquitectura-assets.s3.amazonaws.com/logistics.png" width="80px" align="center">
+    </div>
+    <div class="container">
+      <div id="productsGrid" class="row" ng-controller="productsListController">
+          <div class="col-md-4 border border-warning" ng-repeat="product in products">
+              <br>
+              <p align="center">
+                <strong> {{product.name}}</strong>
+                <br>
+                <img src="{{product.thumbImageUri}}" alt="{{product.name}}" style="width:50%">
+              </p>
+              <p>
+                <br>
+                <b>Categoría:</b> {{product.type}}
+                <br>
+                <b>Precio:</b> {{product.price}}
+                <br>
+                <b>Categoría 1:</b> {{product.category1}}
+                <br>
+                <b>Categoría 2:</b> {{product.category2}}
+              </p>
+          </div>
+        </div>
+      </div>
+    <p>
+      <br>
+      <br>
+    </p>
+  </body>
+  <script>
+
+    var app = angular.module('amazonianApp', []);
+
+    var gridScope;
+
+    app.controller('productsListController', function($scope) {
+
+      $scope.products =
+        [
+          {
+            "productId": "4e53920c-505a-4a90-a694-b9300791f0ae",
+            "name": "AWS DeepRacer",
+            "type": "Smart Hardware",
+            "price": 300,
+            "category1": "Machine Learning",
+            "category2": "Dispositivo",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/1.png"
+          },
+          {
+            "productId": "4e539202-505a-4a90-a694-b9300791f0ae",
+            "name": "AWS Certified Solutions Architect – Associate Guide",
+            "type": "Books",
+            "price": 80,
+            "category1": "Certificación",
+            "category2": "Literatura Técnica",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/2.png"
+          },
+          {
+            "productId": "4e539202-505a-4a90-a694-59300791f0ae",
+            "name": "Balón Americano",
+            "type": "Sports",
+            "price": 80,
+            "category1": "Fitness",
+            "category2": "Outdoors",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/3.png"
+          },
+          {
+            "productId": "4e539202-505a-4a90-a694-b9300791f0ae",
+            "name": "Learn Amazon SageMaker",
+            "type": "Books",
+            "price": 60,
+            "category1": "Certificación",
+            "category2": "Literatura Técnica",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/4.png"
+          },
+          {
+            "productId": "4e539202-505a-4a90-a694-b9400791f0ae",
+            "name": "Amazon Web Services In Action",
+            "type": "Books",
+            "price": 90,
+            "category1": "Certificación",
+            "category2": "Literatura Técnica",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/5.png"
+          },
+          {
+            "productId": "4e539202-505a-4a90-a694-29400791f0ae",
+            "name": "Kayak",
+            "type": "Outdoors",
+            "price": 190,
+            "category1": "Travel",
+            "category2": "Outdoors",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/6.png"
+          },
+          {
+            "productId": "4e5392202-505a-4a90-a694-9400791f0ae",
+            "name": "Alexa Echo Dot",
+            "type": "Smart Hardware",
+            "price": 190,
+            "category1": "Music",
+            "category2": "Dispositivo",
+            "thumbImageUri": "https://curso-arquitectura-assets.s3.amazonaws.com/products/7.png"
+          }
+        ]
+    });
+
+
+  </script>
+</html>
