@@ -174,7 +174,7 @@ Abrir `~/environment/AmazonianStore/module-2/aws-cli/task-definition.json` en el
 
 Reemplace los valores indicados con los apropiados de sus recursos creados.
 
-Estos valores se extraerán de la respuesta de CloudFormation que copió anteriormente, así como de la etiqueta de imagen de la ventana acoplable que envió anteriormente a ECR, por ejemplo: `REPLACE_ME_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/amazonianstore/service:latest`
+Estos valores se extraerán de la respuesta de CloudFormation que copió anteriormente, así como de la etiqueta de imagen de la imagen Docker que envió anteriormente a ECR, por ejemplo: `REPLACE_ME_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/amazonianstore/service:latest`
 
 Una vez que haya reemplazado los valores `task-defintion.json`y lo haya guardado. Ejecute el siguiente comando para registrar una nueva definición de tarea en ECS:
 
@@ -250,7 +250,7 @@ Copie el nombre DNS que guardó al crear el NLB y envíele una solicitud usando 
 http://amazonian-nlb-123456789-abc123456.elb.us-east-1.amazonaws.com/store
 ```
 
-Una respuesta que muestra la misma respuesta JSON que recibimos anteriormente al probar el contenedor de la ventana acoplable localmente en Cloud9 significa que su API de Flask está en funcionamiento en AWS Fargate.
+Una respuesta que muestra la misma respuesta JSON que recibimos anteriormente al probar el contenedor de la imagen Docker localmente en Cloud9 significa que su API de Flask está en funcionamiento en AWS Fargate.
 
 >Note: Nota: este balanceador de carga de red solo admite solicitudes HTTP (http: //) ya que no tiene instalados certificados SSL / TLS. Para este tutorial, asegúrese de enviar solicitudes usando http: // solamente, las solicitudes https: // no funcionarán correctamente.
 
@@ -261,6 +261,9 @@ A continuación, debemos integrar nuestro sitio web con su nuevo backend de API 
 
 Abra el archivo en Cloud9 y reemplace el área resaltada a continuación entre las comillas con la URL NLB
 
+Después de pegar, la línea debería verse similar a la siguiente:
+
+![after replace](/images/module-2/after-replace.png)
 
 #### Subir a S3
 Para cargar este archivo en su sitio web alojado en S3, use nuevamente el nombre del bucket que se creó durante el Módulo 1 y ejecute el siguiente comando:
@@ -401,7 +404,7 @@ git commit -m "modifique la descripcion de uno de los productos."
 git push
 ```
 
-Una vez que el cambio se envía al repositorio, puede abrir el servicio CodePipeline en la consola de AWS para ver los cambios a medida que avanzan en la canalización de CI / CD. Después de confirmar su cambio de código, los cambios tardarán entre 5 y 10 minutos en implementarse en su servicio en vivo que se ejecuta en Fargate. Durante este tiempo, AWS CodePipeline organizará la activación de una ejecución de canalización cuando los cambios se hayan verificado en su repositorio de CodeCommit, activará su proyecto de CodeBuild para iniciar una nueva compilación y recuperará la imagen de la ventana acoplable que CodeBuild envió a ECR y realizará un ECS automatizado. Servicio de actualizaciónAcción para conectar drenar los contenedores existentes que se están ejecutando en su servicio y reemplazarlos con la imagen recién construida. Actualice su sitio web Amazonian Store en el navegador para ver que los cambios han surtido efecto.
+Una vez que el cambio se envía al repositorio, puede abrir el servicio CodePipeline en la consola de AWS para ver los cambios a medida que avanzan en la canalización de CI / CD. Después de confirmar su cambio de código, los cambios tardarán entre 5 y 10 minutos en implementarse en su servicio en vivo que se ejecuta en Fargate. Durante este tiempo, AWS CodePipeline organizará la activación de una ejecución de canalización cuando los cambios se hayan verificado en su repositorio de CodeCommit, activará su proyecto de CodeBuild para iniciar una nueva compilación y recuperará la imagen de la imagen Docker que CodeBuild envió a ECR y realizará un ECS automatizado. Servicio de actualizaciónAcción para conectar drenar los contenedores existentes que se están ejecutando en su servicio y reemplazarlos con la imagen recién construida. Actualice su sitio web Amazonian Store en el navegador para ver que los cambios han surtido efecto.
 
 Puede ver el progreso de su cambio de código a través de la consola de CodePipeline aquí (no se necesitan acciones, ¡solo observe la automatización en acción!): [AWS CodePipeline](https://console.aws.amazon.com/codepipeline/home)
 
