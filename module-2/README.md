@@ -65,8 +65,6 @@ A continuación, creará una imagen de contenedor de Docker que contiene todo el
 
 Todo el código necesario para ejecutar nuestro servicio de backend se almacena en el directorio `/module-2/app/` del repositorio que ha clonado en su IDE de Cloud9. Si desea revisar el código Python que usa Flask para crear la API de servicio, vea el archivo `/module-2/app/service/amazonianStoreService.py`.
 
-All of the code required to run our service backend is stored within the `/module-2/app/` directory of the repository you've cloned into your Cloud9 IDE.  If you would like to review the Python code that uses Flask to create the service API, view the `/module-2/app/service/amazonianStoreService.py` file.
-
 Docker ya viene instalado en el IDE de Cloud9 que ha creado, por lo que para construir la imagen de Docker localmente, todo lo que tenemos que hacer es ejecutar los siguientes comandos en la terminal de Cloud9:
 
 * Navegar a `~/environment/module-2/app`
@@ -107,11 +105,9 @@ Como resultado, verá que Docker informa que su contenedor está funcionando loc
 
 Para probar nuestro servicio con una solicitud local, vamos a abrir el navegador web integrado dentro del IDE de Cloud9 que se puede usar para obtener una vista previa de las aplicaciones que se ejecutan en la instancia del IDE. Para abrir el navegador web de vista previa, seleccione `Vista previa>`` Vista previa de la aplicación en ejecución en la barra de menú de Cloud9:
 
-![preview-menu](/images/module-2/preview-menu.png)
 
 Esto abrirá otro panel en el IDE donde estará disponible el navegador web. Agregue /store al final del URI en la barra de direcciones del navegador de vista previa en el nuevo panel y presione enter:
 
-![preview-menu](/images/module-2/address-bar.png)
 
 Si tiene éxito, verá una respuesta del servicio que devuelve el documento JSON almacenado en `/AmazonianStore/module-2/app/service/store-response.json`
 
@@ -263,13 +259,8 @@ Una respuesta que muestra la misma respuesta JSON que recibimos anteriormente al
 #### Reemplazar el API Endpoint
 A continuación, debemos integrar nuestro sitio web con su nuevo backend de API en lugar de utilizar los datos codificados que cargamos previamente en S3. Deberá actualizar el siguiente archivo para usar la misma URL NLB para las llamadas a la API (no incluya la ruta /store ):/module-2/web/index.html
 
-Abra el archivo en Cloud9 y reemplace el área resaltada a continuación entre las comillas con la URL NLB:
+Abra el archivo en Cloud9 y reemplace el área resaltada a continuación entre las comillas con la URL NLB
 
-![before replace](/images/module-2/before-replace.png)
-
-Después de pegar, la línea debería verse similar a la siguiente:
-
-![after replace](/images/module-2/after-replace.png)
 
 #### Subir a S3
 Para cargar este archivo en su sitio web alojado en S3, use nuevamente el nombre del bucket que se creó durante el Módulo 1 y ejecute el siguiente comando:
