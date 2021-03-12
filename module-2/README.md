@@ -82,7 +82,7 @@ cd ~/environment/AmazonianStore/module-2/app
 docker build . -t REPLACE_ME_ACCOUNT_ID.dkr.ecr.REPLACE_ME_REGION.amazonaws.com/amazonianstore/service:latest
 ```
 
-Verá que Docker  instala todos los paquetes de dependencia necesarios que nuestra aplicación necesita y genera la etiqueta para la imagen construida. Copie la etiqueta de la imagen para referencia posterior. Debajo de la etiqueta de ejemplo que se muestra es: *111111111111.dkr.ecr.us-east-1.amazonaws.com/amazonianstore/service:latest*
+Verá que Docker  instala todos los paquetes de dependencia necesarios que nuestra aplicación necesita y genera la etiqueta para la imagen construida. Copie la etiqueta de la salida para referencia posterior. Debajo de la etiqueta de ejemplo que se muestra es: *111111111111.dkr.ecr.us-east-1.amazonaws.com/amazonianstore/service:latest*
 
 ```
 Successfully built 8bxxxxxxxxab
@@ -400,7 +400,7 @@ git commit -m "modifique la descripcion de uno de los productos."
 git push
 ```
 
-Una vez que el cambio se envía al repositorio, puede abrir el servicio CodePipeline en la consola de AWS para ver los cambios a medida que avanzan en la canalización de CI / CD. Después de confirmar su cambio de código, los cambios tardarán entre 5 y 10 minutos en implementarse en su servicio en vivo que se ejecuta en Fargate. Durante este tiempo, AWS CodePipeline organizará la activación de una ejecución de canalización cuando los cambios se hayan verificado en su repositorio de CodeCommit, activará su proyecto de CodeBuild para iniciar una nueva compilación y recuperará la imagen de la imagen Docker que CodeBuild envió a ECR y realizará un ECS automatizado. Servicio de actualizaciónAcción para conectar drenar los contenedores existentes que se están ejecutando en su servicio y reemplazarlos con la imagen recién construida. Actualice su sitio web Amazonian Store en el navegador para ver que los cambios han surtido efecto.
+Una vez que el cambio se envía al repositorio, puede abrir el servicio CodePipeline en la consola de AWS para ver los cambios a medida que avanzan en la canalización de CI / CD. Después de confirmar su cambio de código, los cambios tardarán entre 5 y 10 minutos en implementarse en su servicio en vivo que se ejecuta en Fargate. Durante este tiempo, AWS CodePipeline organizará la activación de una ejecución de canalización cuando los cambios se hayan verificado en su repositorio de CodeCommit, activará su proyecto de CodeBuild para iniciar una nueva compilación y recuperará la imagen Docker que CodeBuild envió a ECR y realizará un ECS automatizado. Servicio de actualizaciónAcción para conectar drenar los contenedores existentes que se están ejecutando en su servicio y reemplazarlos con la imagen recién construida. Actualice su sitio web Amazonian Store en el navegador para ver que los cambios han surtido efecto.
 
 Puede ver el progreso de su cambio de código a través de la consola de CodePipeline aquí (no se necesitan acciones, ¡solo observe la automatización en acción!): [AWS CodePipeline](https://console.aws.amazon.com/codepipeline/home)
 
