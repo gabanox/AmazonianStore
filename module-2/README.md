@@ -261,10 +261,6 @@ A continuación, debemos integrar nuestro sitio web con su nuevo backend de API 
 
 Abra el archivo en Cloud9 y reemplace el área resaltada a continuación entre las comillas con la URL NLB
 
-Después de pegar, la línea debería verse similar a la siguiente:
-
-![after replace](/images/module-2/after-replace.png)
-
 #### Subir a S3
 Para cargar este archivo en su sitio web alojado en S3, use nuevamente el nombre del bucket que se creó durante el Módulo 1 y ejecute el siguiente comando:
 
