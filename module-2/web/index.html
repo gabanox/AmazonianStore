@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   </head>
-  <body ng-app="productsApp" style="background-color:#EBEBEB">
+  <body ng-app="productsApp" style="background-color:#ffffff">
     <style>
       @media (max-width: 800px) {
       	img {
@@ -48,7 +48,7 @@
               <p align="center">
                 <strong> {{product.name}}</strong>
                 <br>
-                <img src="{{product.thumbImageUri}}" alt="{{product.Name}}">
+                <img src="{{product.thumbImageUri}}" alt="{{product.Name}}" style="width:50%">
               </p>
               <p>
                 <br>
@@ -56,9 +56,9 @@
                 <br>
                 <b>Price:</b> {{product.price}}
                 <br>
-                <b>A/B:</b> {{product.category1}}
+                <b>Categoria 1:</b> {{product.category1}}
                 <br>
-                <b>C/D:</b> {{product.category2}}
+                <b>Categoria 2:</b> {{product.category2}}
               </p>
           </div>
         </div>
@@ -70,7 +70,7 @@
   </body>
   <script>
 
-    var productsApiEndpoint = 'REPLACE_ME'; // example: 'http://nlb-abcd12345-01234567890123.elb.us-east-1.amazonaws.com'
+    var productsApiEndpoint = 'http://amazonian-nlb-b2f38271bae6d4db.elb.us-east-1.amazonaws.com'; // example: 'http://nlb-abcd12345-01234567890123.elb.us-east-1.amazonaws.com'
 
     var app = angular.module('productsApp', []);
 
@@ -89,7 +89,7 @@
        {
          "categories": [
            {
-             "title": "A/B",
+             "title": "Categoria 1",
              "selections":  [
                "C",
                "D",
@@ -97,7 +97,7 @@
              ]
            },
            {
-             "title": "A/B",
+             "title": "Categoria 1",
              "selections":  [
                "X",
                "Y",
@@ -114,7 +114,7 @@
        $scope.queryProducts = function(filterCategory, filterValue) {
 
            var filterCategoryQS = "";
-           if (filterCategory==="A/B") {
+           if (filterCategory==="Categoria 1") {
              filterCategoryQS = "C";
            } else {
              filterCategoryQS = "D"
