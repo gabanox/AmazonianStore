@@ -1,6 +1,6 @@
 {
   "pipeline": {
-      "name": "MythicalMysfitsServiceCICDPipeline",
+      "name": "AmazonianStoreServiceCICDPipeline",
       "roleArn": "REPLACE_ME_CODEPIPELINE_ROLE_ARN",
       "stages": [
         {
@@ -19,12 +19,12 @@
               },
               "outputArtifacts": [
                 {
-                  "name": "MythicalMysfitsService-SourceArtifact"
+                  "name": "AmazonianStoreService-SourceArtifact"
                 }
               ],
               "configuration": {
                 "BranchName": "master",
-                "RepositoryName": "MythicalMysfitsService-Repository"
+                "RepositoryName": "AmazonianStoreService-Repository"
               },
               "runOrder": 1
             }
@@ -43,16 +43,16 @@
               },
               "outputArtifacts": [
                 {
-                  "name": "MythicalMysfitsService-BuildArtifact"
+                  "name": "AmazonianStoreService-BuildArtifact"
                 }
               ],
               "inputArtifacts": [
                 {
-                  "name": "MythicalMysfitsService-SourceArtifact"
+                  "name": "AmazonianStoreService-SourceArtifact"
                 }
               ],
               "configuration": {
-                "ProjectName": "MythicalMysfitsServiceCodeBuildProject"
+                "ProjectName": "AmazonianStoreServiceCodeBuildProject"
               },
               "runOrder": 1
             }
@@ -71,12 +71,12 @@
               },
               "inputArtifacts": [
                 {
-                  "name": "MythicalMysfitsService-BuildArtifact"
+                  "name": "AmazonianStoreService-BuildArtifact"
                 }
               ],
               "configuration": {
-                "ClusterName": "MythicalMysfits-Cluster",
-                "ServiceName": "MythicalMysfits-Service",
+                "ClusterName": "AmazonianStore-Cluster",
+                "ServiceName": "AmazonianStore-Service",
                 "FileName": "imagedefinitions.json"
               }
             }

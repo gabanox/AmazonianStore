@@ -52,7 +52,7 @@ Cuando reciba esta respuesta, CloudFormation habrá terminado de aprovisionar to
 **Utilizará valores de la salida de este comando durante el resto del taller. Puede ejecutar el siguiente comando para enviar directamente el comando `describe-stacks` anterior a un nuevo archivo en su IDE que se almacenará como `cloudformation-core-output.json`:**
 
 ```
-aws cloudformation describe-stacks --stack-name AmazonianStoreCoreStack > ~/environment/cloudformation-core-output.json
+aws cloudformation describe-stacks --stack-name AmazonianStoreCoreStack > ~/environment/cloudformation-core-output.json --query "Stacks[*].Outputs
 ```
 
 #### Módulo 2a: Implementación de un servicio con AWS Fargate
