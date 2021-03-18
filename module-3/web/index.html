@@ -51,13 +51,13 @@
               </p>
               <p>
                 <br>
-                <b>Species:</b> {{Type.species}}
+                <b>Categoría:</b> {{product.type}}
                 <br>
-                <b>Age:</b> {{Type.age}}
+                <b>Precio:</b> {{product.price}}
                 <br>
-                <b>AmazonPrime:</b> {{Type.goodevil}}
+                <b>AmazonPrime:</b> {{product.prime}}
                 <br>
-                <b>DescuentoRegular:</b> {{Type.lawchaos}}
+                <b>DescuentoRegular:</b> {{product.descuento}}
               </p>
           </div>
         </div>
@@ -65,14 +65,13 @@
     <p>
       <br>
       <br>
-      &nbsp;&nbsp;This site was created for use in the AWS Modern Application Workshop. <a href="https://github.com/aws-samples/aws-modern-application-workshop">Please see details here.</a>
     </p>
   </body>
   <script>
 
-    var mysfitsApiEndpoint = 'REPLACE_ME';
+    var productsApiEndpoint = 'REPLACE_ME';
 
-    var app = angular.module('mysfitsApp', []);
+    var app = angular.module('productsApp', []);
 
     var gridScope;
 
@@ -81,55 +80,53 @@
     app.controller('clearFilterController', function($scope) {
     });
 
-    app.controller('mysfitsFilterController', function($scope) {
+    app.controller('productsFilterController', function($scope) {
 
       filterScope = $scope;
 
-      // The possible options for Mysfits to populate the dropdown filters.
+      // The possible options for products to populate the dropdown filters.
       $scope.filterOptionsList =
        {
          "categories": [
            {
-             "title": "Good/Evil",
+             "title": "Suscripcion",
              "selections":  [
-               "Good",
-               "Neutral",
-               "Evil"
+               "Prime",
+               "Estandard"
              ]
            },
            {
-             "title": "Lawful/Chaotic",
+             "title": "Descuento",
              "selections":  [
-               "Lawful",
-               "Neutral",
-               "Chaotic"
+               "50%",
+               "0%"
              ]
            }
          ]
        };
 
        $scope.removeFilter = function() {
-         allMysfits = getAllMysfits(applyGridScope);
+         allProducts = getAllProducts(applyGridScope);
        }
 
-       $scope.queryMysfits = function(filterCategory, filterValue) {
+       $scope.queryProducts = function(filterCategory, filterValue) {
 
            var filterCategoryQS = "";
-           if (filterCategory==="Good/Evil") {
-             filterCategoryQS = "GoodEvil";
+           if (filterCategory==="Suscripcion") {
+             filterCategoryQS = "Prime";
            } else {
-             filterCategoryQS = "LawChaos"
+             filterCategoryQS = ""
            }
-           var mysfitsApi = mysfitsApiEndpoint + '/mysfits?' + 'filter=' + filterCategoryQS + "&value=" + filterValue;
+           var productsApi = productsApiEndpoint + '/products?' + 'filter=' + filterCategoryQS + "&value=" + filterValue;
 
            $.ajax({
-             url : mysfitsApi,
+             url : productsApi,
              type : 'GET',
              success : function(response) {
-               applyGridScope(response.mysfits)
+               applyGridScope(response.products)
              },
              error : function(response) {
-               console.log("could not retrieve mysfits list.");
+               console.log("could not retrieve products list.");
              }
            });
        }
@@ -138,31 +135,31 @@
 
     });
 
-    app.controller('mysfitsListController', function($scope) {
+    app.controller('productsListController', function($scope) {
 
       gridScope = $scope;
 
-      getAllMysfits(applyGridScope);
+      getAllProducts(applyGridScope);
 
     });
 
-    function applyGridScope(mysfitsList) {
-      gridScope.mysfits = mysfitsList;
+    function applyGridScope(productsList) {
+      gridScope.products = productsList;
       gridScope.$apply();
     }
 
-    function getAllMysfits(callback) {
+    function getAllProducts(callback) {
 
-      var mysfitsApi = mysfitsApiEndpoint + '/mysfits';
+      var productsApi = productsApiEndpoint + '/products';
 
       $.ajax({
-        url : mysfitsApi,
+        url : productsApi,
         type : 'GET',
         success : function(response) {
-          callback(response.mysfits);
+          callback(response.products);
         },
         error : function(response) {
-          console.log("could not retrieve mysfits list.");
+          console.log("could not retrieve products list.");
         }
       });
     }
