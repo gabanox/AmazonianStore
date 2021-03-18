@@ -1,0 +1,160 @@
+{
+      "ProductsTable" : [
+         {
+            "PutRequest": {
+               "Item": {
+                  "ProductId" : {
+                     "S": "4e53920c-505a-4a90-a694-b9300791f0ae"
+                  },
+                  "Name" : {
+                     "S": "AWS DeepRacer"
+                  },
+                  "Type" : {
+                     "S": "Smart Hardware"
+                  },
+                  "Description" : {
+                     "S": "AWS DeepRacer le ofrece una forma interesante y divertida de comenzar a utilizar el aprendizaje por refuerzo (RL). El RL es una técnica avanzada de aprendizaje automático (ML) que adopta un enfoque muy diferente respecto de otros modelos de ML."
+                  },
+                  "Price" : {
+                     "N": "300"
+                  },
+                  "AmazonPrime" : {
+                     "S": "Disponible con Amazon Prime"
+                  },
+                  "DescuentoRegular" : {
+                     "S": "Sin descuento"
+                  },
+                  "ThumbImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/1.png"
+                  },
+                  "ProfileImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/1.png"
+                  },
+                  "Likes" : {
+                    "N": "0"
+                  },
+                  "Bought": {
+                    "BOOL": false
+                  }
+               }
+            }
+         },
+         {
+            "PutRequest": {
+               "Item": {
+                  "ProductId" : {
+                     "S": "0e53920c-505a-4a90-a694-b9300791f0a0"
+                  },
+                  "Name" : {
+                     "S": "AWS Certified Solutions Architect – Associate Guide"
+                  },
+                  "Type" : {
+                     "S": "Books"
+                  },
+                  "Description" : {
+                     "S": "Aprenda de los expertos en la materia de AWS, aplique escenarios del mundo real y apruebe el examen AWS Certified Solutions Architect-Associate"
+                  },
+                  "Price" : {
+                     "N": "35"
+                  },
+                  "AmazonPrime" : {
+                     "S": "Disponible con Amazon Prime"
+                  },
+                  "DescuentoRegular" : {
+                     "S": "50%"
+                  },
+                  "ThumbImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/2.png"
+                  },
+                  "ProfileImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/2.png"
+                  },
+                  "Likes" : {
+                    "N": "5"
+                  },
+                  "Bought": {
+                    "BOOL": true
+                  }
+               }
+            }
+         },         
+         {
+            "PutRequest": {
+               "Item": {
+                  "ProductId" : {
+                     "S": "1e53920c-505a-4a90-a694-b9300791f0a1"
+                  },
+                  "Name" : {
+                     "S": "Balón Americano"
+                  },
+                  "Type" : {
+                     "S": "Sports"
+                  },
+                  "Description" : {
+                     "S": "Los verdaderos fanáticos lo saben. No hay sustituto para la autenticidad, especialmente, cuando se trata de autógrafos o recuerdos. Con Wilson, el fútbol oficial de la NFL, sabes que obtienes el trato real con los logotipos y colores con licencia oficial de tu equipo favorito."
+                  },
+                  "Price" : {
+                     "N": "23"
+                  },
+                  "AmazonPrime" : {
+                     "S": "Disponible con Amazon Prime"
+                  },
+                  "DescuentoRegular" : {
+                     "S": "50%"
+                  },
+                  "ThumbImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/3.png"
+                  },
+                  "ProfileImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/3.png"
+                  },
+                  "Likes" : {
+                    "N": "50"
+                  },
+                  "Bought": {
+                    "BOOL": false
+                  }
+               }
+            }
+         },
+         {
+            "PutRequest": {
+               "Item": {
+                  "ProductId" : {
+                     "S": "3e53920c-505a-4a90-a694-b9300791f0a4"
+                  },
+                  "Name" : {
+                     "S": "Learn Amazon SageMaker"
+                  },
+                  "Type" : {
+                     "S": "Books"
+                  },
+                  "Description" : {
+                     "S": "Cree e implemente rápidamente modelos de aprendizaje automático sin administrar la infraestructura y mejore la productividad con las capacidades de Amazon SageMaker, como Amazon SageMaker Studio, Autopilot, Experiments, Debugger y Model Monitor"
+                  },
+                  "Price" : {
+                     "N": "6.99"
+                  },
+                  "AmazonPrime" : {
+                     "S": "No disponible con Amazon Prime"
+                  },
+                  "DescuentoRegular" : {
+                     "S": "0"
+                  },
+                  "ThumbImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/4.png"
+                  },
+                  "ProfileImageUri" : {
+                     "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/4.png"
+                  },
+                  "Likes" : {
+                    "N": "20"
+                  },
+                  "Bought": {
+                    "BOOL": false
+                  }
+               }
+            }
+         }
+      ]
+   }

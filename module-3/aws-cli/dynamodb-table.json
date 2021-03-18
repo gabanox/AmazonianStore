@@ -1,0 +1,69 @@
+{
+  "TableName": "ProductsTable",
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 1,
+    "WriteCapacityUnits": 1
+  },
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "ProductId",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "AmazonPrime",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "DescuentoRegular",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "ProductId",
+      "KeyType": "HASH"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "AmazonPrimeIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "AmazonPrime",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "ProductId",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      }
+    },
+    {
+      "IndexName": "DescuentoRegularIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "DescuentoRegular",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "ProductId",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      }
+    }
+  ]
+}
