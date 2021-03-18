@@ -1,6 +1,6 @@
 # Módulo 3: Agregar la capa de datos con Amazon DynamoDB
 
-![Architecture](/images/module-3/architecture-module-3.png)
+![Architecture](/images/module-3/architecture-module-3a.png)
 
 **Tiempo para completar:** 20 minutos
 
