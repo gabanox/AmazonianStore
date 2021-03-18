@@ -15,7 +15,7 @@ def healthCheckResponse():
 @app.route("/store")
 def getProducts():
 
-    # read the mysfits JSON from the listed file.
+    # read the products JSON from the listed file.
     response = Response(open("store-response.json", "rb").read())
 
     # set the Content-Type header so that the browser is aware that the response

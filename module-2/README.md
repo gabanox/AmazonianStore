@@ -52,7 +52,7 @@ Cuando reciba esta respuesta, CloudFormation habrá terminado de aprovisionar to
 **Utilizará valores de la salida de este comando durante el resto del taller. Puede ejecutar el siguiente comando para enviar directamente el comando `describe-stacks` anterior a un nuevo archivo en su IDE que se almacenará como `cloudformation-core-output.json`:**
 
 ```
-aws cloudformation describe-stacks --stack-name AmazonianStoreCoreStack > ~/environment/cloudformation-core-output.json
+aws cloudformation describe-stacks --stack-name AmazonianStoreCoreStack > ~/environment/cloudformation-core-output.json --query "Stacks[*].Outputs
 ```
 
 #### Módulo 2a: Implementación de un servicio con AWS Fargate
@@ -287,7 +287,7 @@ En este módulo, creará una pila de CI / CD completamente administrada que entr
 Primero, necesitamos crear otro bucket de S3 que se utilizará para almacenar los artefactos temporales que se crean en medio de nuestras ejecuciones de canalización de CI / CD. Elija un nuevo nombre de depósito para estos artefactos y cree uno con el siguiente comando CLI:
 
 ```
-aws s3 mb s3://REPLACE_ME_CHOOSE_ARTIFACTS_BUCKET_NAME
+aws s3 mb s3://REPLACE_ME_ARTIFACTS_BUCKET_NAME
 ```
 
 A continuación, este bucket necesita una política de bucket para definir permisos para los datos almacenados en él. Pero a diferencia de nuestro grupo de sitios web que permitía el acceso a cualquier persona, solo nuestra canalización de CI / CD debería tener acceso a este grupo. Hemos proporcionado el archivo JSON necesario para esta política en `~/environment/AmazonianStore/module-2/aws-cli/artifacts-bucket-policy.json`. Abra este archivo y, en su interior, deberá reemplazar varias cadenas para incluir los ARN que se crearon anteriormente como parte de AmazonianStoreCoreStack, así como el nombre de bucket recién elegido para sus artefactos de CI / CD.
