@@ -22,7 +22,7 @@
                      "S": "Disponible con Amazon Prime"
                   },
                   "DescuentoRegular" : {
-                     "S": "Sin descuento"
+                     "S": "0%"
                   },
                   "ThumbImageUri" : {
                      "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/1.png"
@@ -96,9 +96,6 @@
                   "Price" : {
                      "N": "23"
                   },
-                  "AmazonPrime" : {
-                     "S": "Disponible con Amazon Prime"
-                  },
                   "DescuentoRegular" : {
                      "S": "50%"
                   },
@@ -139,7 +136,7 @@
                      "S": "No disponible con Amazon Prime"
                   },
                   "DescuentoRegular" : {
-                     "S": "0"
+                     "S": "0%"
                   },
                   "ThumbImageUri" : {
                      "S": "https://curso-arquitectura-assets.s3.amazonaws.com/products/4.png"
