@@ -89,14 +89,14 @@
        {
          "categories": [
            {
-             "title": "Suscripcion",
+             "title": "AmazonPrime",
              "selections":  [
-               "Prime",
-               "Estandard"
+               "No disponible con Amazon Prime",
+               "Disponible con Amazon Prime"
              ]
            },
            {
-             "title": "Descuento",
+             "title": "DescuentoRegular",
              "selections":  [
                "50%",
                "0%"
@@ -112,8 +112,8 @@
        $scope.queryProducts = function(filterCategory, filterValue) {
 
            var filterCategoryQS = "";
-           if (filterCategory==="Suscripcion") {
-             filterCategoryQS = "Prime";
+           if (filterCategory==="AmazonPrime") {
+             filterCategoryQS = "DescuentoRegular";
            } else {
              filterCategoryQS = ""
            }
@@ -126,7 +126,7 @@
                applyGridScope(response.products)
              },
              error : function(response) {
-               console.log("could not retrieve products list.");
+               console.log("No se pudo devolver lista de productos");
              }
            });
        }
@@ -159,7 +159,7 @@
           callback(response.products);
         },
         error : function(response) {
-          console.log("could not retrieve products list.");
+          console.log("No se pudo devolver lista de productos");
         }
       });
     }

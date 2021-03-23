@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <title>Amazonian Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="js/aws-cognito-sdk.min.js"></script>
+    <script src="js/amazon-cognito-identity.min.js"></script>
+  </head>
+  <body style="background-color:#ffffff">
+    <br>
+    <div style="text-align: center">
+      <img src="https://curso-arquitectura-assets.s3.amazonaws.com/logistics.png" width="80px" align="center">
+    </div>
+    <div class="container">
+      <h4>Ingresar el código enviado a su correo electrónico. <br>Después, Haga login nuevamente en la página de inicio.<h4>
+      <form id="userDetails">
+        <div class="form-group">
+          <label for="confirmCode">Código de confirmación:</label>
+          <input type="number" class="form-control" id="confirmCode" placeholder="Ingrese el código de configrmación" name="confirmCode">
+        </div>
+        <button type="submit" class="btn btn-success">Confirmar</button>
+      </form>
+    </div>
+
+  </body>
+
+  <script>
+
+  var cognitoUserPoolId = 'REPLACE_ME';  // example: 'us-east-1_abcd12345'
+  var cognitoUserPoolClientId = 'REPLACE_ME'; // example: 'abcd12345abcd12345abcd12345'
+
+  $(document).on('click', '.btn-success', function(event) {
+    event.preventDefault();
+
+    var confirmCode = document.getElementById('confirmCode').value;
+
+    var poolData = {
+      UserPoolId : cognitoUserPoolId,
+      ClientId : cognitoUserPoolClientId
+    };
+
+    var userName = localStorage.getItem('email');
+
+    var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    var userData = {
+        Username : userName,
+        Pool : userPool
+    };
+
+    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+    cognitoUser.confirmRegistration(confirmCode, true, function(err, result) {
+        if (err) {
+            alert(err.message);
+            return;
+        }
+        window.location.replace("index.html");
+    });
+
+  });
+  </script>
+</html>

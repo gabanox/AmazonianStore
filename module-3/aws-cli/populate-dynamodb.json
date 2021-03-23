@@ -33,7 +33,7 @@
                   "Likes" : {
                     "N": "0"
                   },
-                  "Bought": {
+                  "Favorite": {
                     "BOOL": false
                   }
                }
@@ -72,7 +72,7 @@
                   "Likes" : {
                     "N": "5"
                   },
-                  "Bought": {
+                  "Favorite": {
                     "BOOL": true
                   }
                }
@@ -108,7 +108,7 @@
                   "Likes" : {
                     "N": "50"
                   },
-                  "Bought": {
+                  "Favorite": {
                     "BOOL": false
                   }
                }
@@ -147,7 +147,7 @@
                   "Likes" : {
                     "N": "20"
                   },
-                  "Bought": {
+                  "Favorite": {
                     "BOOL": false
                   }
                }

@@ -4,16 +4,13 @@ import logging
 from collections import defaultdict
 import argparse
 
-# create a DynamoDB client using boto3. The boto3 library will automatically
-# use the credentials associated with our ECS task role to communicate with
-# DynamoDB, so no credentials need to be stored/managed at all by our code!
 client = boto3.client('dynamodb')
 
 def getProductsJson(items):
     productsList = defaultdict(list)
 
     for item in items:
-        mysfit = {}
+        product = {}
 
         product["productId"] = item["ProductId"]["S"]
         product["name"] = item["Name"]["S"]
@@ -25,7 +22,7 @@ def getProductsJson(items):
         product["thumbImageUri"] = item["ThumbImageUri"]["S"]
         product["profileImageUri"] = item["ProfileImageUri"]["S"]
         product["likes"] = item["Likes"]["N"]
-        product["bought"] = item["Bought"]["BOOL"]
+        product["favorite"] = item["Favorite"]["BOOL"]
 
         productList["products"].append(product)
 
