@@ -10,7 +10,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   </head>
-  <body ng-app="productsApp" style="background-color:#EBEBEB">
+  <body ng-app="productsApp" style="background-color:#ffffff">
     <style>
       @media (max-width: 800px) {
       	img {
@@ -47,7 +47,7 @@
               <p align="center">
                 <strong> {{product.name}}</strong>
                 <br>
-                <img src="{{product.thumbImageUri}}" alt="{{product.Name}}">
+                <img src="{{product.thumbImageUri}}" alt="{{product.Name}}" style="width:50%">
               </p>
               <p>
                 <br>
@@ -117,7 +117,7 @@
            } else {
              filterCategoryQS = ""
            }
-           var productsApi = productsApiEndpoint + '/products?' + 'filter=' + filterCategoryQS + "&value=" + filterValue;
+           var productsApi = productsApiEndpoint + '/store?' + 'filter=' + filterCategoryQS + "&value=" + filterValue;
 
            $.ajax({
              url : productsApi,
@@ -150,7 +150,7 @@
 
     function getAllProducts(callback) {
 
-      var productsApi = productsApiEndpoint + '/products';
+      var productsApi = productsApiEndpoint + '/store';
 
       $.ajax({
         url : productsApi,
